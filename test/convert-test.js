@@ -1,7 +1,7 @@
 var assert  = require('chai').assert;
 var convert = require('../lib/convert.js');
 
-describe('num', function() {
+describe('The currency converter', function() {
 
   it('converts one digit numbers', function () {
     var n1 = convert(1);
@@ -43,7 +43,7 @@ describe('num', function() {
     assert.equal(n3, "nineteen and 50/100 dollars");
   });
 
-  it('converts large numbers regardless of decimal', function () {
+  it('converts large numbers less than ten million regardless of decimal', function () {
     var n1 = convert(1000000.00);
     var n2 = convert(1000000);
     var n3 = convert(3333333.33);
