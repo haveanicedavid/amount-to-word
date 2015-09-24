@@ -33,7 +33,7 @@ describe('the dollar parser', function() {
     assert.equal(n3, "ninety");
   });
 
-  xit('parses complex tens value', function () {
+  it('parses complex tens value', function () {
     var n1 = parse(34);
     var n2 = parse(47);
     var n3 = parse(98);
@@ -41,6 +41,19 @@ describe('the dollar parser', function() {
     assert.equal(n1, "thirty four");
     assert.equal(n2, "fourty seven");
     assert.equal(n3, "ninety eight");
+  });
+
+  xit('parses hundreds', function () {
+    var n1 = parse(100);
+    var n2 = parse(300);
+    var n3 = parse(500);
+    var n4 = parse(900);
+
+    assert.equal(n1, "one hundred");
+    assert.equal(n2, "three hundred");
+    assert.equal(n3, "five hundred");
+    assert.equal(n4, "nine hundred");
+    
   });
 
 });
