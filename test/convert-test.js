@@ -17,10 +17,12 @@ describe('The currency converter', function() {
     var n1 = convert(1.01);
     var n2 = convert(3.42);
     var n3 = convert(9.92);
+    var n4 = convert(0.43);
 
     assert.equal(n1, "one and 01/100 dollars");
     assert.equal(n2, "three and 42/100 dollars");
     assert.equal(n3, "nine and 92/100 dollars");
+    assert.equal(n4, "zero and 43/100 dollars");
   });
 
   it('converts teens', function () {
@@ -37,10 +39,12 @@ describe('The currency converter', function() {
     var n1 = convert(10.30);
     var n2 = convert(17.77);
     var n3 = convert(19.50);
+    var n4 = convert(10000.30);
 
     assert.equal(n1, "ten and 30/100 dollars");
     assert.equal(n2, "seventeen and 77/100 dollars");
     assert.equal(n3, "nineteen and 50/100 dollars");
+    assert.equal(n4, "ten thousand and 30/100 dollars");
   });
 
   it('converts large numbers less than ten million regardless of decimal', function () {
